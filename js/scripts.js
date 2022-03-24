@@ -15,11 +15,10 @@ $(document).ready(function () {
     const email = $("input#email").val();
     const phone = parseInt($("input#phone").val());
     const output = $(".output");
-    const catalogue = $(".catalogue");
-    const contact = $("#contact");
+
 
     output.append(
-        "<ol class='catalogue hidden' id='contact'>" +
+        "<form> <ol class='catalogue hidden' id='contact'>" +
         "<li>" + firstName +"</li>" +
         "<li>" + lastName +"</li>" +
         "<li>" + dob +"</li>"+
@@ -27,18 +26,31 @@ $(document).ready(function () {
         "<li>" + city +"</li>"+
         "<li>" + state +"</li>"+
         "<li>" + email +"</li>"+
-        "<li>" + phone +"</li>" + "</ol>"+
-        "<button class='btn btn-info' id='contactBtn'>"
+        "<li>" + phone +"</li>" + "</ol>" +
+        "<button class='btn btn-info' id='contactBtn'>" + "</form>"
         );
     
+    const catalogue = $(".catalogue");
+    const contact = $("#contact");
     let contactBtn = $("#contactBtn");
     let def = false;
 
-    contactBtn.click(function() {
+    contactBtn.click(function(event) {
+
+      event.preventDefault();
+
       if(def === false) {
-        catalogue.removeClass("catalogue hidden").addClass("catalogue");
-         def = true;
+        catalogue.toggle();
+        def = true;
+      } else {
+        catalogue.toggle();
+        def = false;
       }
     });
   });
+});
+
+$(document).ready(function () {
+
+
 });
