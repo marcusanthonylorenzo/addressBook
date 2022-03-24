@@ -3,6 +3,20 @@
   width: 30rem;
 }
 
+.hidden {
+  display: none;
+}
+
 li {
   list-style: none;
+}
+
+.output {
+  display: flex;
+  margin: 2rem;
+}
+
+.btn {
+  height: 2rem;
+  background-color: #f456;
 }

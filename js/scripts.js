@@ -15,9 +15,11 @@ $(document).ready(function () {
     const email = $("input#email").val();
     const phone = parseInt($("input#phone").val());
     const output = $(".output");
+    const catalogue = $(".catalogue");
+    const contact = $("#contact");
 
     output.append(
-        "<div class='catalogue'>" +
+        "<ol class='catalogue hidden' id='contact'>" +
         "<li>" + firstName +"</li>" +
         "<li>" + lastName +"</li>" +
         "<li>" + dob +"</li>"+
@@ -25,9 +27,18 @@ $(document).ready(function () {
         "<li>" + city +"</li>"+
         "<li>" + state +"</li>"+
         "<li>" + email +"</li>"+
-        "<li>" + phone +"</li>"
+        "<li>" + phone +"</li>" + "</ol>"+
+        "<button class='btn btn-info' id='contactBtn'>"
         );
-      
+    
+    let contactBtn = $("#contactBtn");
+    let def = false;
 
+    contactBtn.click(function() {
+      if(def === false) {
+        catalogue.removeClass("catalogue hidden").addClass("catalogue");
+         def = true;
+      }
+    });
   });
 });
