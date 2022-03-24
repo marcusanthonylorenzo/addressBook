@@ -16,8 +16,8 @@ $(document).ready(function () {
     const phone = parseInt($("input#phone").val());
     const output = $(".output");
 
-    output.prepend().html("<div>")
-      .append(
+    output.append(
+        "<div class='catalogue'>" +
         "<li>" + firstName +"</li>" +
         "<li>" + lastName +"</li>" +
         "<li>" + dob +"</li>"+
